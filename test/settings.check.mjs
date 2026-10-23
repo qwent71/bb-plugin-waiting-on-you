@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { createFakePluginHost } from "@get-bb/plugin-sdk/testing";
 import plugin from "../dist/server.js";
 
-const { bb, harness } = createFakePluginHost({ pluginId: "inbox" });
+const { bb, harness } = createFakePluginHost({ pluginId: "waiting-on-you" });
 await plugin(bb);
 const call = (method, input = null) => harness.behavior.callRpc(method, input);
 
@@ -113,7 +113,7 @@ assert.equal((await call("settings_get")).emptySeparator, true, "stays apart aft
 await call("settings_reset");
 await call("settings_update", { rowMarker: "tag", categories: { failed: { color: "violet" } } });
 const exported = JSON.parse((await harness.behavior.runCli(["export"])).stdout);
-assert.equal(exported.format, "bb-plugin-inbox/settings");
+assert.equal(exported.format, "bb-plugin-waiting-on-you/settings");
 assert.equal(exported.settings.rowMarker, "tag");
 await call("settings_reset");
 const restored = await call("settings_import", exported);
@@ -135,9 +135,12 @@ assert.deepEqual(
   partial.skipped.sort(),
   ["categories.done.icon", "categories.ghost", "rowMarker", "wat"],
 );
+// A file exported before the rename still imports.
+const legacy = await call("settings_import", { format: "bb-plugin-inbox/settings", version: 1, settings: { maxItems: 8 } });
+assert.equal(legacy.settings.maxItems, 8);
 const junk = await call("settings_import", [1, 2]);
 assert.deepEqual(junk.applied, []);
-assert.equal((await call("settings_get")).maxItems, 5, "junk changes nothing");
+assert.equal((await call("settings_get")).maxItems, 8, "junk changes nothing");
 
 // The same from a terminal.
 const cliImport = await harness.behavior.runCli(["import", "--json", '{"density":"compact","bogus":true}']);

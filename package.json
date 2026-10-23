@@ -1,22 +1,23 @@
 {
-  "name": "bb-plugin-inbox",
+  "name": "bb-plugin-waiting-on-you",
   "version": "0.1.0",
-  "description": "A “Needs you” block above bb's sidebar thread list: threads waiting on your reply and threads that failed.",
+  "description": "See which agent threads wait on your reply or failed, in a block above bb's sidebar thread list.",
   "keywords": [
     "bb-plugin",
-    "bb",
+    "needs-you",
+    "attention",
     "sidebar",
-    "inbox",
-    "attention"
+    "approvals"
   ],
   "author": "qwent71",
-  "homepage": "https://github.com/qwent71/bb-plugin-inbox#readme",
+  "license": "MIT",
+  "homepage": "https://github.com/qwent71/bb-plugin-waiting-on-you#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qwent71/bb-plugin-inbox.git"
+    "url": "git+https://github.com/qwent71/bb-plugin-waiting-on-you.git"
   },
   "bugs": {
-    "url": "https://github.com/qwent71/bb-plugin-inbox/issues"
+    "url": "https://github.com/qwent71/bb-plugin-waiting-on-you/issues"
   },
   "type": "module",
   "engines": {
@@ -24,10 +25,10 @@
     "bbPluginSdk": ">=0.6.49"
   },
   "bb": {
-    "name": "Inbox",
+    "name": "Waiting On You",
     "description": "A block above the thread list: threads waiting on your reply and threads that failed.",
     "branding": {
-      "icon": "Mail"
+      "icon": "./assets/icon.svg"
     },
     "server": "./server.ts",
     "app": "./app.tsx",

@@ -1,4 +1,4 @@
-// bb-plugin-inbox — a "Needs you" block pinned above the sidebar thread list,
+// bb-plugin-waiting-on-you — a "Needs you" block pinned above the sidebar thread list,
 // whichever list is active, its settings page, and two keyboard commands.
 //
 // bb has no slot above the thread list, so an app overlay (which keeps the
@@ -237,7 +237,7 @@ function InboxOverlay() {
 
 export default definePluginApp((app) => {
   app.slots.experimental_appOverlay({
-    id: "inbox",
+    id: "needs-you-block",
     component: InboxOverlay,
   });
   app.slots.settingsSection({
@@ -246,14 +246,14 @@ export default definePluginApp((app) => {
   });
   app.commands.register({
     id: COMMAND_IDS.nextThread,
-    title: "Inbox: open the next thread that needs you",
+    title: "Waiting On You: open the next thread that needs you",
     defaultShortcut: NEXT_THREAD_SHORTCUT,
     isAvailable: hasNextThread,
     run: openNextThread,
   });
   app.commands.register({
     id: COMMAND_IDS.toggleList,
-    title: "Inbox: show or hide the list",
+    title: "Waiting On You: show or hide the list",
     isAvailable: canToggleCollapsed,
     run: toggleCollapsed,
   });

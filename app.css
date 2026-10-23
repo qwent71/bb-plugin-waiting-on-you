@@ -1,20 +1,20 @@
 /* Text colors for each category, light and dark. bb switches themes with a
    .dark class rather than the OS setting, and this file ships as plain CSS
    (Tailwind's dark: variant would follow the OS), so the pairs live here. */
-.inbox-tone-amber { color: #d97706; }
-.inbox-tone-orange { color: #ea580c; }
-.inbox-tone-red { color: #dc2626; }
-.inbox-tone-rose { color: #e11d48; }
-.inbox-tone-violet { color: #7c3aed; }
-.inbox-tone-sky { color: #0284c7; }
-.inbox-tone-emerald { color: #059669; }
-.inbox-tone-gray { color: #71717a; }
+.wou-tone-amber { color: #d97706; }
+.wou-tone-orange { color: #ea580c; }
+.wou-tone-red { color: #dc2626; }
+.wou-tone-rose { color: #e11d48; }
+.wou-tone-violet { color: #7c3aed; }
+.wou-tone-sky { color: #0284c7; }
+.wou-tone-emerald { color: #059669; }
+.wou-tone-gray { color: #71717a; }
 
-.dark .inbox-tone-amber { color: #fbbf24; }
-.dark .inbox-tone-orange { color: #fb923c; }
-.dark .inbox-tone-red { color: #f87171; }
-.dark .inbox-tone-rose { color: #fb7185; }
-.dark .inbox-tone-violet { color: #a78bfa; }
-.dark .inbox-tone-sky { color: #38bdf8; }
-.dark .inbox-tone-emerald { color: #34d399; }
-.dark .inbox-tone-gray { color: #a1a1aa; }
+.dark .wou-tone-amber { color: #fbbf24; }
+.dark .wou-tone-orange { color: #fb923c; }
+.dark .wou-tone-red { color: #f87171; }
+.dark .wou-tone-rose { color: #fb7185; }
+.dark .wou-tone-violet { color: #a78bfa; }
+.dark .wou-tone-sky { color: #38bdf8; }
+.dark .wou-tone-emerald { color: #34d399; }
+.dark .wou-tone-gray { color: #a1a1aa; }

@@ -395,7 +395,7 @@ export function migrateSettings(
 }
 
 /** Marks an exported file so an import can tell it apart from other JSON. */
-export const EXPORT_FORMAT = "bb-plugin-inbox/settings";
+export const EXPORT_FORMAT = "bb-plugin-waiting-on-you/settings";
 export const EXPORT_VERSION = 1;
 
 export interface SettingsExport {

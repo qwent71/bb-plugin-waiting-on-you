@@ -63,42 +63,42 @@ export const PALETTE: Record<ColorName, Swatch> = {
   amber: {
     solid: "bg-amber-500",
     soft: "bg-amber-500/12",
-    text: "inbox-tone-amber",
+    text: "wou-tone-amber",
   },
   orange: {
     solid: "bg-orange-500",
     soft: "bg-orange-500/12",
-    text: "inbox-tone-orange",
+    text: "wou-tone-orange",
   },
   red: {
     solid: "bg-red-500",
     soft: "bg-red-500/12",
-    text: "inbox-tone-red",
+    text: "wou-tone-red",
   },
   rose: {
     solid: "bg-rose-500",
     soft: "bg-rose-500/12",
-    text: "inbox-tone-rose",
+    text: "wou-tone-rose",
   },
   violet: {
     solid: "bg-violet-500",
     soft: "bg-violet-500/12",
-    text: "inbox-tone-violet",
+    text: "wou-tone-violet",
   },
   sky: {
     solid: "bg-sky-500",
     soft: "bg-sky-500/12",
-    text: "inbox-tone-sky",
+    text: "wou-tone-sky",
   },
   emerald: {
     solid: "bg-emerald-500",
     soft: "bg-emerald-500/12",
-    text: "inbox-tone-emerald",
+    text: "wou-tone-emerald",
   },
   gray: {
     solid: "bg-zinc-400",
     soft: "bg-zinc-500/12",
-    text: "inbox-tone-gray",
+    text: "wou-tone-gray",
   },
 };
 

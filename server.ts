@@ -1,4 +1,4 @@
-// bb-plugin-inbox — backend entry. The block reads threads from the sidebar's
+// bb-plugin-waiting-on-you — backend entry. The block reads threads from the sidebar's
 // live view in app.tsx. The server only keeps the plugin's settings.
 //
 // Settings live in plugin storage rather than bb.settings: bb renders its
@@ -259,12 +259,12 @@ export default async function plugin(bb: BbPluginApi) {
     settings_import: (raw) => serially(() => importSettings(raw)),
   });
 
-  // `bb inbox …`: the same import and export from a terminal. run executes on
+  // `bb waiting-on-you …`: the same import and export from a terminal. run executes on
   // the bb server, so JSON travels as text, never as a path on some disk.
   bb.cli.register(
     defineCli({
-      name: "inbox",
-      summary: "Export, import, or reset the Inbox plugin's settings",
+      name: "waiting-on-you",
+      summary: "Export, import, or reset the Waiting On You plugin's settings",
       commands: {
         export: cliCommand({
           summary: "Print the settings as JSON (redirect it to a file to keep it)",
@@ -276,7 +276,7 @@ export default async function plugin(bb: BbPluginApi) {
         }),
         import: cliCommand({
           summary:
-            'Apply settings from JSON, whole or partial: bb inbox import --json "$(cat inbox.json)"',
+            'Apply settings from JSON, whole or partial: bb waiting-on-you import --json "$(cat waiting-on-you.json)"',
           options: {
             json: {
               type: "string",
@@ -294,7 +294,7 @@ export default async function plugin(bb: BbPluginApi) {
                 `not valid JSON: ${cause instanceof Error ? cause.message : String(cause)}`,
                 {
                   code: "invalid_json",
-                  hint: 'Pass the file contents: bb inbox import --json "$(cat inbox.json)"',
+                  hint: 'Pass the file contents: bb waiting-on-you import --json "$(cat waiting-on-you.json)"',
                 },
               );
             }

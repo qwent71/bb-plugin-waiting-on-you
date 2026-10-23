@@ -590,7 +590,7 @@ export function SettingsPage() {
           </Row>
           <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-3">
             <p className="text-xs text-muted-foreground">
-              Change these keys in bb's keyboard settings: search for “Inbox”.
+              Change these keys in bb's keyboard settings: search for “Waiting On You”.
             </p>
             <Button variant="outline" size="sm" asChild>
               <a
@@ -788,7 +788,7 @@ function SaveBar({
   );
 }
 
-const EXPORT_FILE_NAME = "inbox-settings.json";
+const EXPORT_FILE_NAME = "waiting-on-you-settings.json";
 
 /** Copy or save the settings as JSON, and bring JSON back in. */
 function ImportExportGroup({
@@ -968,9 +968,9 @@ function ImportExportGroup({
       ) : null}
       <div className="px-4 py-3 text-xs text-muted-foreground">
         From a terminal:{" "}
-        <code className="font-mono">bb inbox export &gt; inbox.json</code> and{" "}
+        <code className="font-mono">bb waiting-on-you export &gt; waiting-on-you.json</code> and{" "}
         <code className="font-mono">
-          bb inbox import --json "$(cat inbox.json)"
+          bb waiting-on-you import --json "$(cat waiting-on-you.json)"
         </code>
       </div>
     </Group>
@@ -1215,7 +1215,8 @@ function Group({
   children: ReactNode;
 }) {
   const active = quick === undefined ? null : matchGroupPreset(quick.group, quick.settings);
-  const storageKey = quick === undefined ? null : `bb-plugin-inbox:fine-tune:${quick.group}`;
+  const pluginId = usePluginId();
+  const storageKey = quick === undefined ? null : `bb-plugin-${pluginId}:fine-tune:${quick.group}`;
   const [openByUser, setOpenByUser] = useState<boolean | null>(() => {
     if (storageKey === null) return null;
     const stored = window.localStorage.getItem(storageKey);
