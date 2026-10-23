@@ -8,11 +8,12 @@ leaves the block on its own.
 ## Install
 
 ```sh
-bb plugin install git:https://github.com/qwent71/bb-plugin-inbox.git@^0.1.0
+bb plugin install git:https://github.com/qwent71/bb-plugin-inbox.git@main
 ```
 
-bb clones the repository, installs its dependencies, and builds it. Releases
-are `vX.Y.Z` tags, so `bb plugin update` moves you to later 0.x releases.
+bb clones the repository, installs its dependencies, and builds it. Tagged
+`vX.Y.Z` releases will follow; once they exist, install a range such as
+`@^0.1.0` and `bb plugin update` moves you to later releases.
 Settings live on the plugin's page under Settings → Inbox; `bb inbox export`
 and `bb inbox import` move them between machines.
 
