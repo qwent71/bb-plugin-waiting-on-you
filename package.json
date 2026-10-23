@@ -1,0 +1,70 @@
+{
+  "name": "bb-plugin-inbox",
+  "version": "0.1.0",
+  "description": "A “Needs you” block above bb's sidebar thread list: threads waiting on your reply and threads that failed.",
+  "keywords": [
+    "bb-plugin",
+    "bb",
+    "sidebar",
+    "inbox",
+    "attention"
+  ],
+  "author": "qwent71",
+  "homepage": "https://github.com/qwent71/bb-plugin-inbox#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qwent71/bb-plugin-inbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qwent71/bb-plugin-inbox/issues"
+  },
+  "type": "module",
+  "engines": {
+    "bb": ">=0.46",
+    "bbPluginSdk": ">=0.6.49"
+  },
+  "bb": {
+    "name": "Inbox",
+    "description": "A block above the thread list: threads waiting on your reply and threads that failed.",
+    "branding": {
+      "icon": "Mail"
+    },
+    "server": "./server.ts",
+    "app": "./app.tsx",
+    "skills": []
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.49",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "better-sqlite3": "^12.0.0",
+    "cron-parser": "^5.5.0",
+    "hono": "^4.11.9",
+    "typescript": "^5.7.0",
+    "@pierre/diffs": "^1.2.9",
+    "@radix-ui/react-alert-dialog": "^1.1.19",
+    "@radix-ui/react-context-menu": "^2.3.3",
+    "@radix-ui/react-dialog": "^1.1.19",
+    "@radix-ui/react-dropdown-menu": "^2.1.20",
+    "@radix-ui/react-hover-card": "^1.1.19",
+    "@radix-ui/react-menubar": "^1.1.20",
+    "@radix-ui/react-navigation-menu": "^1.2.18",
+    "@radix-ui/react-popover": "^1.1.19",
+    "@radix-ui/react-select": "^2.3.3",
+    "@radix-ui/react-tooltip": "^1.2.12",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "sonner": "^1.7.4",
+    "tailwind-merge": "^3.4.0",
+    "vaul": "^1.1.2"
+  },
+  "scripts": {
+    "check": "tsc -p . && bb plugin build && node test/settings.check.mjs && node test/inbox.check.mts && node test/presets.check.mts && node test/shortcuts.check.mts"
+  }
+}
